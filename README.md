@@ -96,6 +96,28 @@ namespace dotnet
 }
 
 ```
+```rust
+//rust
+use mexc_rust_sdk::MexcClient;
+
+fn main() {
+    let api_key = "apiKey".to_string();
+    let api_secret = "apiSecret".to_string();
+    let client = MexcClient::new(api_key, api_secret);
+
+    // Example usage:
+    match client.ping() {
+        Ok(response) => println!("Ping successful: {}", response),
+        Err(err) => println!("Error pinging: {}", err),
+    }
+
+    match client.avg_price("BTCUSDT") {
+        Ok(price) => println!("Average price: {}", price),
+        Err(err) => println!("Error fetching average price: {}", err),
+    }
+}
+```
+```
 
 ## Market
 ### Ping
